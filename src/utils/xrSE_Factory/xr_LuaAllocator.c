@@ -4267,8 +4267,8 @@ Void_t* mEMALIGn(alignment, bytes) size_t alignment; size_t bytes;
       total room so that this is always possible.
     */
 
-    brk = (char*)mem2chunk((PTR_UINT)(((PTR_UINT)(m + alignment - 1)) &
-                           -((signed long) alignment)));
+	  brk = (char*)mem2chunk((PTR_UINT)(((uintptr_t)(m + alignment - 1)) &
+		  -((uintptr_t) alignment)));
     if ((CHUNK_SIZE_T)(brk - (char*)(p)) < MINSIZE)
       brk += alignment;
 

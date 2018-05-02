@@ -242,6 +242,12 @@ bool CWeaponMagazined::TryReload()
             Actor()->callback(GameObject::eWeaponNoAmmoAvailable)(lua_game_object(), AC);
         }
 
+		if (m_set_next_ammoType_on_reload != undefined_ammo_type)
+		{
+			m_ammoType = m_set_next_ammoType_on_reload;
+			m_set_next_ammoType_on_reload = undefined_ammo_type;
+		}
+
         m_pCurrentAmmo = smart_cast<CWeaponAmmo*>(m_pInventory->GetAny(m_ammoTypes[m_ammoType].c_str()));
 
         if (IsMisfire() && iAmmoElapsed)
@@ -257,7 +263,8 @@ bool CWeaponMagazined::TryReload()
             SwitchState(eReload);
             return				true;
         }
-        else for (u8 i = 0; i < u8(m_ammoTypes.size()); ++i)
+	if (iAmmoElapsed == 0)
+        for (u8 i = 0; i < u8(m_ammoTypes.size()); ++i)
         {
             m_pCurrentAmmo = smart_cast<CWeaponAmmo*>(m_pInventory->GetAny(m_ammoTypes[i].c_str()));
             if (m_pCurrentAmmo)
@@ -395,7 +402,7 @@ void CWeaponMagazined::ReloadMagazine()
         //попытаться найти в инвентаре патроны текущего типа
         m_pCurrentAmmo = smart_cast<CWeaponAmmo*>(m_pInventory->GetAny(tmp_sect_name));
 
-        if (!m_pCurrentAmmo && !m_bLockType)
+        if (!m_pCurrentAmmo && !m_bLockType && iAmmoElapsed == 0)
         {
             for (u8 i = 0; i < u8(m_ammoTypes.size()); ++i)
             {

@@ -57,7 +57,7 @@ void vertex::PointBL(Fvector& D)
 void	mem_Optimize	()
 {
 	Memory.mem_compact	();
-	Msg("* Memory usage: %d M",Memory.mem_usage()/(1024*1024));
+	Msg("* Memory usage: %lld M",Memory.mem_usage()/(1024*1024));
 }
 
 void xrCompiler	(LPCSTR name, bool draft_mode, bool pure_covers, LPCSTR out_name)
