@@ -11,3 +11,12 @@ lib/
 _build/
 libraries/
 /src/*.tss
+/**/x64/
+**/.vs/
+*.VC.db
+*.VC.opendb
+*.user
+lua51.dll
+lua51.exp
+lua51.lib
+luajit.exe
