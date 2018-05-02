@@ -27,9 +27,15 @@
 		#define GS_BIG_ENDIAN
 	#endif
 #else
-	typedef gsi_u32			gsi_uint;
-	#define PTR_ALIGNMENT	16
-	#define GSI_64BIT		(0)
+	#if 1 // 0 - 32 bit | 1 - 64 bit
+		typedef gsi_u64			gsi_uint;
+		#define PTR_ALIGNMENT	32
+		#define GSI_64BIT		(1)
+	#else
+		typedef gsi_u32			gsi_uint;
+		#define PTR_ALIGNMENT	16
+		#define GSI_64BIT		(0)
+	#endif
 #endif
 
 

@@ -90,7 +90,7 @@ void xrLC_GlobalData	::vertices_isolate_and_pool_reload()
 	}
 /////////////////////////////////////////////////////////
 	_g_vertices.clear_not_free();
-	clLog( "mem usage before clear pool: %u", Memory.mem_usage() );
+	clLog( "mem usage before clear pool: %llu", Memory.mem_usage() );
 
 
 	_VertexPool.clear();
@@ -119,14 +119,14 @@ void	xrLC_GlobalData::clear_mesh		()
 {
 	
 	//R_ASSERT(g_XSplit.empty());
-	clLog( "mem usage before clear mesh: %u", Memory.mem_usage() );
+	clLog( "mem usage before clear mesh: %llu", Memory.mem_usage() );
 	//g_vertices().clear();
 	//g_faces().clear();
 	//_VertexPool.clear();
 	//_FacePool.clear();
 	gl_mesh_clear	();
 	Memory.mem_compact();
-	clLog( "mem usage after clear mesh: %u", Memory.mem_usage() );
+	clLog( "mem usage after clear mesh: %llu", Memory.mem_usage() );
 }
 
 

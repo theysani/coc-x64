@@ -297,7 +297,7 @@ void CGamePersistent::WeathersUpdate()
             for (u32 idx = 0; I != E; ++I, ++idx)
             {
                 CEnvAmbient::SSndChannel& ch = **I;
-                R_ASSERT(idx<20);
+                R_ASSERT(idx<32);
                 if (ambient_sound_next_time[idx] == 0)//first
                 {
                     ambient_sound_next_time[idx] = Device.dwTimeGlobal + ch.get_rnd_sound_first_time();

@@ -412,7 +412,7 @@ void Startup()
     destroyEngine();
 }
 
-static BOOL CALLBACK logDlgProc(HWND hw, UINT msg, WPARAM wp, LPARAM lp)
+static INT_PTR CALLBACK logDlgProc(HWND hw, UINT msg, WPARAM wp, LPARAM lp)
 {
     switch (msg)
     {
@@ -1220,7 +1220,7 @@ void CApplication::LoadEnd()
     if (0 == ll_dwReference)
     {
         Msg("* phase time: %d ms", phase_timer.GetElapsed_ms());
-        Msg("* phase cmem: %d K", Memory.mem_usage() / 1024);
+        Msg("* phase cmem: %lld K", Memory.mem_usage() / 1024);
         Console->Execute("stat_memory");
         g_appLoaded = TRUE;
         // DUMP_PHASE;
@@ -1271,7 +1271,7 @@ void CApplication::LoadStage()
     VERIFY(ll_dwReference);
     Msg("* phase time: %d ms", phase_timer.GetElapsed_ms());
     phase_timer.Start();
-    Msg("* phase cmem: %d K", Memory.mem_usage() / 1024);
+    Msg("* phase cmem: %lld K", Memory.mem_usage() / 1024);
 
     if (g_pGamePersistent->GameType() == 1 && strstr(Core.Params, "alife"))
         max_load_stage = 17;

@@ -31,6 +31,7 @@ static void show_restrictions	(LPCSTR restrictions)
 
 bool show_restrictions			(CRestrictedObject *object)
 {
+#ifdef DEBUG
 	Msg					("DEFAULT OUT RESTRICTIONS :");
 	show_restrictions	(*Level().space_restriction_manager().default_out_restrictions() ? *Level().space_restriction_manager().default_out_restrictions() : "");
 
@@ -42,7 +43,7 @@ bool show_restrictions			(CRestrictedObject *object)
 
 	Msg					("IN RESTRICTIONS          :");
 	show_restrictions	(*object->in_restrictions()  ? *object->in_restrictions()  : "");
-
+#endif // DEBUG
 	return				(false);
 }
 #endif
