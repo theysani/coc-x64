@@ -55,6 +55,7 @@ IC	u32	CSpaceRestrictionBridge::accessible_nearest	(T &restriction, const Fvecto
 			VPUSH(position)
 		)
 	);
+    if (!ai().level_graph().valid_vertex_id(selected)) return u32(-1);
 
 	{
 		min_dist_sqr = flt_max;
@@ -81,6 +82,7 @@ IC	u32	CSpaceRestrictionBridge::accessible_nearest	(T &restriction, const Fvecto
 		selected	= new_selected;
 	}
 	VERIFY	(ai().level_graph().valid_vertex_id(selected));
+    if (!ai().level_graph().valid_vertex_id(selected)) return u32(-1);
 
 	{
 		Fvector		center = ai().level_graph().vertex_position(selected);
@@ -118,6 +120,7 @@ IC	u32	CSpaceRestrictionBridge::accessible_nearest	(T &restriction, const Fvecto
 	}
 	VERIFY		(ai().level_graph().valid_vertex_id(selected));
 	
+    if (!ai().level_graph().valid_vertex_id(selected)) return u32(-1);
 	return		(selected);
 }
 
