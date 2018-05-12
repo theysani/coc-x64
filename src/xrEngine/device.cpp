@@ -535,6 +535,12 @@ void CRenderDevice::OnWM_Activate(WPARAM wParam, LPARAM lParam)
             if (!editor())
 # endif // #ifdef INGAME_EDITOR
                 ShowCursor(FALSE);
+                if (m_hWnd)
+                {
+                    RECT winRect;
+                    GetWindowRect(m_hWnd, &winRect);
+                    ClipCursor(&winRect);
+                }
 #endif // #ifndef DEDICATED_SERVER
         }
         else
@@ -542,6 +548,7 @@ void CRenderDevice::OnWM_Activate(WPARAM wParam, LPARAM lParam)
             app_inactive_time_start = TimerMM.GetElapsed_ms();
             Device.seqAppDeactivate.Process(rp_AppDeactivate);
             ShowCursor(TRUE);
+            ClipCursor(NULL);
         }
     }
 }
