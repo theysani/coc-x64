@@ -20,7 +20,10 @@ IC	CTradeParameters::CTradeParameters						(const shared_str &section) :
 			pSettings->r_float(section,"sell_price_factor_hostile"),
 			pSettings->r_float(section,"sell_price_factor_friendly")
 		)
-	)
+	),
+	buy_item_condition_factor(1.0f),
+	buy_item_exponent(0.75f),
+	sell_item_exponent(0.75f)
 {
 }
 

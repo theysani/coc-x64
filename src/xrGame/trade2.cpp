@@ -165,7 +165,13 @@ u32	CTrade::GetItemPrice(PIItem pItem, bool b_buying, bool b_free)
 	
 	// computing condition factor
 	// for "dead" weapon we use 10% from base cost, for "good" weapon we use full base cost
-	float					condition_factor = powf(pItem->GetCondition()*0.9f + .1f, 0.75f); 
+	float					exponent = 0.0f;
+	if (b_buying) {
+		exponent = pThis.inv_owner->trade_parameters().buy_item_exponent;
+	} else {
+		exponent = pThis.inv_owner->trade_parameters().sell_item_exponent;
+	}
+	float					condition_factor = powf(pItem->GetCondition()*0.9f + .1f, exponent > 0.0f ? exponent : 0.75f);
 	
 	// computing relation factor
 	float					relation_factor;

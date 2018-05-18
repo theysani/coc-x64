@@ -652,6 +652,8 @@ public:
             void				show_condition						(CScriptIniFile *ini_file, LPCSTR section);
             void				buy_supplies						(CScriptIniFile *ini_file, LPCSTR section);
             void				buy_item_condition_factor			(float factor);
+            void				buy_item_exponent					(float factor);
+            void				sell_item_exponent					(float factor);
 
             LPCSTR				sound_prefix						() const;
             void				sound_prefix						(LPCSTR sound_prefix);
