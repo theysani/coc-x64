@@ -174,7 +174,7 @@ void CUIPdaWnd::Update()
 
 	m_clock->TextItemControl().SetText(InventoryUtilities::GetGameTimeAsString(InventoryUtilities::etpTimeToMinutes).c_str());
 
-	Device.seqParallel.push_back	(fastdelegate::FastDelegate0<>(pUILogsWnd,&CUILogsWnd::PerformWork));
+    pUILogsWnd->PerformWork();
 }
 
 void CUIPdaWnd::SetActiveSubdialog(const shared_str& section)
