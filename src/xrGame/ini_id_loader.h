@@ -131,7 +131,7 @@ const typename ITEM_DATA* CSINI_IdToIndex::GetById (const T_ID& str_id, bool no_
 
 	if(m_pItemDataVector->end() == it)
 	{
-		R_ASSERT3(no_assert, "item not found, id", *str_id);
+		VERIFY3(no_assert, "item not found, id", *str_id);
 		return NULL;
 	}
 
