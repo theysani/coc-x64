@@ -23,6 +23,8 @@
 TEMPLATE_SPECIALIZATION
 CStateGroupEatAbstract::CStateGroupEat(_Object *obj) : inherited(obj)
 {
+    corpse = NULL;
+    m_time_last_eat = 0;
 	add_state	(eStateEat_CorpseApproachRun,	xr_new<CStateMonsterMoveToPoint<_Object> >	(obj));
 	add_state	(eStateEat_CorpseApproachWalk,	xr_new<CStateMonsterMoveToPoint<_Object> >	(obj));
 	add_state	(eStateEat_CheckCorpse,			xr_new<CStateMonsterCustomAction<_Object> >	(obj));

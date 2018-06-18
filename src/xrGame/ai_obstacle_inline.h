@@ -11,6 +11,7 @@
 
 IC	ai_obstacle::ai_obstacle							(CGameObject *object)
 {
+    m_crc = 0;
 	m_object				= object;
 	m_actual				= false;
 

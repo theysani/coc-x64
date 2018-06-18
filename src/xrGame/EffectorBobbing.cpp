@@ -19,6 +19,10 @@
 
 CEffectorBobbing::CEffectorBobbing() : CEffectorCam(eCEBobbing,10000.f)
 {
+    fYAmplitude = 0.0f;
+    fSpeed = 0.0f;
+    dwMState = 0;
+    m_bZoomMode = false;
 	fTime			= 0;
 	fReminderFactor	= 0;
 	is_limping		= false;

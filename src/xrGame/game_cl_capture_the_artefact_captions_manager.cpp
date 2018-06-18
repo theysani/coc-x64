@@ -8,6 +8,8 @@
 
 CTAGameClCaptionsManager::CTAGameClCaptionsManager()
 {
+    m_can_spawn = false;
+    dwLastTimeRemains = 0;
 	parent_game_ui				=	NULL;
 	parent_game_object			=	NULL;
 	m_press_fire2spect_showed	=	false;

@@ -12,6 +12,7 @@
 TEMPLATE_SPECIALIZATION
 CStateBurerAttackRunAroundAbstract::CStateBurerAttackRunAround(_Object *obj) : inherited(obj)
 {
+    time_started = 0;
 }
 
 TEMPLATE_SPECIALIZATION

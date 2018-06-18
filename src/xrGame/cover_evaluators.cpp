@@ -23,6 +23,9 @@ float	g_smart_cover_factor	= 1.f;
 
 CCoverEvaluatorBase::CCoverEvaluatorBase					(CRestrictedObject *object)
 {
+    m_best_loophole_value = 0.0f;
+    m_loophole = NULL;
+    m_can_use_smart_covers = false;
 	m_inertia_time			= 0;
 	m_last_update			= 0;
 	m_inertia_time			= 0;

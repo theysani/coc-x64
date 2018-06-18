@@ -21,6 +21,7 @@ SPhraseDialogData::~SPhraseDialogData ()
 
 CPhraseDialog::CPhraseDialog()
 {
+    m_bFirstIsSpeaking = false;
 	m_SaidPhraseID		= "";
 	m_bFinished			= false;
 	m_pSpeakerFirst		= NULL;

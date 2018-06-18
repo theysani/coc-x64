@@ -5,6 +5,8 @@
 
 CMonsterCorpseManager::CMonsterCorpseManager()
 {
+    vertex = 0;
+    time_last_seen = 0;
 	monster		= 0;
 	corpse		= 0;
 	forced		= false;

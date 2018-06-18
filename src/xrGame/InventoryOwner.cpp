@@ -31,6 +31,7 @@ CInventoryOwner::CInventoryOwner()
 {
     m_pTrade = NULL;
     m_trade_parameters = 0;
+    m_purchase_list = NULL;
 
     m_inventory = xr_new<CInventory>();
     m_pCharacterInfo = xr_new<CCharacterInfo>();

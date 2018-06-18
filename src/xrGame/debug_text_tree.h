@@ -15,7 +15,7 @@ class text_tree
 {
 public: // START INTERFACE
 	text_tree ( char separator=':', int group_id_ = 0) : 
-		        group_id(group_id_), shown(true), separator(separator) {}
+		        group_id(group_id_), shown(true), separator(separator), num_siblings(0) {}
 
 	void        toggle_show  (int group_id);
 

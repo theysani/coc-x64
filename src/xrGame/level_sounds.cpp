@@ -130,6 +130,7 @@ void SMusicTrack::Stop()
 //-----------------------------------------------------------------------------
 CLevelSoundManager::CLevelSoundManager()
 {
+    m_CurrentTrack = 0;
 	m_NextTrackTime		= 0;
 }
 

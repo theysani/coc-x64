@@ -9,8 +9,9 @@
 #define CStateZombieAttackRunAbstract CStateZombieAttackRun<_Object>
 
 TEMPLATE_SPECIALIZATION
-CStateZombieAttackRunAbstract::CStateZombieAttackRun(_Object *obj) : inherited(obj)
+CStateZombieAttackRunAbstract::CStateZombieAttackRun(_Object *obj) : inherited(obj), action()
 {
+    m_time_action_change = 0;
 }
 
 TEMPLATE_SPECIALIZATION

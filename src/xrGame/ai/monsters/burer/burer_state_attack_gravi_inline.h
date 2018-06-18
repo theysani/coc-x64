@@ -1,8 +1,9 @@
 #pragma once
 
 template <typename Object>
-CStateBurerAttackGravi<Object>::CStateBurerAttackGravi(Object *obj) : inherited(obj)
+CStateBurerAttackGravi<Object>::CStateBurerAttackGravi(Object *obj) : inherited(obj), m_action()
 {
+    m_time_gravi_started = 0;
 	m_next_gravi_allowed_tick		=	0;
 	m_anim_end_tick					=	0;
 }

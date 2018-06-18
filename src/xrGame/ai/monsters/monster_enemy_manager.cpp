@@ -10,6 +10,11 @@
 
 CMonsterEnemyManager::CMonsterEnemyManager()
 {
+    vertex = 0;
+    time_last_seen = 0;
+    expediency = false;
+    enemy_see_me = false;
+    m_script_enemy = NULL;
 	monster							= 0;
 	enemy							= 0;
 	flags.zero						();

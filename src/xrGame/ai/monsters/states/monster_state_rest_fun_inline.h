@@ -17,6 +17,7 @@
 TEMPLATE_SPECIALIZATION
 CStateMonsterRestFunAbstract::CStateMonsterRestFun(_Object *obj) : inherited(obj)
 {
+    time_last_hit = 0;
 }
 
 TEMPLATE_SPECIALIZATION

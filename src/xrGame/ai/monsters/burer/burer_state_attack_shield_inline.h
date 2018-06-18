@@ -3,6 +3,7 @@
 template <class Object>
 CStateBurerShield<Object>::CStateBurerShield (Object *obj) : inherited(obj)
 {
+    m_started = false;
 	m_last_shield_started			=	0;
 	m_shield_start_anim_length_sec	=	0;
 	m_next_particle_allowed			=	0;

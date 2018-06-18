@@ -32,6 +32,9 @@ namespace dog
 TEMPLATE_SPECIALIZATION
 CStateGroupAttackMoveToHomePointAbstract::CStateGroupAttackMoveToHomePoint(_Object *obj) : inherited(obj) 
 {
+    m_target_node = 0;
+    m_skip_camp = false;
+    m_state_started = 0;
 	add_state	(eStateAttack_HomePoint_Hide,			xr_new<CStateMonsterMoveToPointEx<_Object> >	(obj));
 	add_state	(eStateAttack_HomePoint_LookOpenPlace,	xr_new<CStateMonsterLookToPoint<_Object> >		(obj));
 

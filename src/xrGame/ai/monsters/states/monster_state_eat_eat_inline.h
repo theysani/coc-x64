@@ -10,6 +10,8 @@
 TEMPLATE_SPECIALIZATION
 CStateMonsterEatingAbstract::CStateMonsterEating(_Object *obj) : inherited(obj)
 {
+    corpse = NULL;
+    time_last_eat = 0;
 }
 
 TEMPLATE_SPECIALIZATION

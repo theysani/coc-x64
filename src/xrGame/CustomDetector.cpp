@@ -13,6 +13,8 @@
 
 ITEM_INFO::ITEM_INFO()
 {
+    snd_time = 0.0f;
+    cur_period = 0.0f;
 	pParticle	= NULL;
 	curr_ref	= NULL;
 }

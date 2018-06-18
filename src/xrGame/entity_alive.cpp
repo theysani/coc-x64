@@ -54,6 +54,11 @@ STR_VECTOR* CEntityAlive::m_pFireParticlesVector = NULL;
 CEntityAlive::CEntityAlive() :
 	m_hit_bone_surface_areas_actual	( false )
 {
+    m_bMobility = false;
+    m_fAccuracy = 0.0f;
+    m_fIntelligence = 0.0f;
+    m_entity_condition = NULL;
+    m_ef_creature_type = 0;
 	
 	monster_community		= xr_new<MONSTER_COMMUNITY>	();
 

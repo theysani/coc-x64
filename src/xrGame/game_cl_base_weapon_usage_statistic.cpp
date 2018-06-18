@@ -294,6 +294,8 @@ void bone_table::net_load(NET_Packet* P)
 
 Player_Statistic::Player_Statistic(LPCSTR Name)
 {
+    last_alive_update_time = 0;
+    m_dwCurMoneyRoundDelta = 0;
 	PName					= Name;
 	PID						= 0;
 	m_dwTotalShots			= 0;

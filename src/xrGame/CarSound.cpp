@@ -12,6 +12,9 @@
 #include "../xrphysics/IPHWorld.h"
 CCar::SCarSound::SCarSound(CCar* car)
 {
+    eCarSound = sndOff;
+    engine_start_delay = 0;
+    time_state_start = 0;
 	volume                 =1.f;
 	pcar=car;
 	relative_pos.set(0.f,0.5f,-1.f);

@@ -10,6 +10,7 @@
 
 IC	CMemberEnemy::CMemberEnemy		(const CEntityAlive *object, squad_mask_type mask)
 {
+    m_level_time = 0;
 	m_object					= object;
 	m_mask.assign				(mask);
 	m_probability				= 1.f;

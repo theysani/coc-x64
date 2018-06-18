@@ -22,6 +22,11 @@ namespace detail
 monster_aura::monster_aura (CBaseMonster* const object, pcstr const name) 
 						: m_object(object), m_pp_effector_name(NULL), m_pp_index(0)
 {
+    m_linear_factor = 0.0f;
+    m_quadratic_factor = 0.0f;
+    m_max_power = 0.0f;
+    m_max_distance = 0.0f;
+    m_pp_highest_at = 0.0f;
 	xr_strcpy							(m_name, sizeof(m_name), name); 
 	m_detect_snd_time	=	0.0f;
 	m_enabled			=	false;

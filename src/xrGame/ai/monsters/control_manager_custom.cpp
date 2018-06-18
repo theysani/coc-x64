@@ -13,6 +13,9 @@
 
 CControlManagerCustom::CControlManagerCustom()
 {
+    m_critical_wound = NULL;
+    m_threaten_anim = NULL;
+    m_threaten_time = 0.0f;
 	m_sequencer		= 0;
 	m_triple_anim	= 0;
 	m_rotation_jump	= 0;

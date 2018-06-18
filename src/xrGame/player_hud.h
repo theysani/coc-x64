@@ -66,7 +66,7 @@ struct attachable_hud_item
 
 	player_hud_motion_container		m_hand_motions;
 			
-			attachable_hud_item		(player_hud* pparent):m_parent(pparent),m_upd_firedeps_frame(u32(-1)),m_parent_hud_item(NULL){}
+			attachable_hud_item		(player_hud* pparent):m_parent(pparent),m_upd_firedeps_frame(u32(-1)),m_parent_hud_item(NULL),m_model(NULL),m_attach_place_idx(0){}
 			~attachable_hud_item	();
 	void load						(const shared_str& sect_name);
 	void update						(bool bForce);

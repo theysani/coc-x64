@@ -107,6 +107,10 @@ struct				net_update
 //	float				fArmor;
 
 	net_update()	{
+        o_model = 0.0f;
+        mstate = 0;
+        weapon = 0;
+        fHealth = 0.0f;
 		dwTimeStamp		= 0;
 		p_pos.set		(0,0,0);
 		p_accel.set		(0,0,0);

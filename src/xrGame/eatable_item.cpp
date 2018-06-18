@@ -22,6 +22,8 @@
 
 CEatableItem::CEatableItem()
 {
+    m_fWeightFull = 0.0f;
+    m_fWeightEmpty = 0.0f;
 	m_physic_item	= 0;
 
 	m_iMaxUses = 1;
