@@ -79,6 +79,11 @@ CAI_Stalker::CAI_Stalker			() :
 	m_take_items_enabled			(true),
 	m_death_sound_enabled			(true)
 {
+    m_pPhysics_support = NULL;
+    m_animation_manager = NULL;
+    m_brain = NULL;
+    m_sight_manager = NULL;
+    m_weapon_shot_effector = NULL;
 	m_sound_user_data_visitor		= 0;
 	m_movement_manager				= 0;
 	m_group_behaviour				= true;
