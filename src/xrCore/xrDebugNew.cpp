@@ -752,6 +752,12 @@ LONG WINAPI UnhandledFilter(_EXCEPTION_POINTERS* pExceptionInfo)
 
     FlushLog();
 
+    if (pExceptionInfo->ExceptionRecord)
+    {
+        Msg("at address %p", pExceptionInfo->ExceptionRecord->ExceptionAddress);
+    }
+    return EXCEPTION_CONTINUE_EXECUTION;
+
     ShowCursor(true);
     ShowWindow(GetActiveWindow(), SW_FORCEMINIMIZE);
     MessageBox(
