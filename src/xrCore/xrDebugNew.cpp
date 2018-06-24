@@ -754,9 +754,9 @@ LONG WINAPI UnhandledFilter(_EXCEPTION_POINTERS* pExceptionInfo)
 
     if (pExceptionInfo->ExceptionRecord)
     {
-        Msg("at address %p", pExceptionInfo->ExceptionRecord->ExceptionAddress);
+        Msg("at address 0x%p", pExceptionInfo->ExceptionRecord->ExceptionAddress);
     }
-    return EXCEPTION_CONTINUE_EXECUTION;
+    //return EXCEPTION_CONTINUE_EXECUTION;
 
     ShowCursor(true);
     ShowWindow(GetActiveWindow(), SW_FORCEMINIMIZE);
@@ -766,7 +766,7 @@ LONG WINAPI UnhandledFilter(_EXCEPTION_POINTERS* pExceptionInfo)
         "Fatal Error",
         MB_OK | MB_ICONERROR | MB_SYSTEMMODAL
         );
-    TerminateProcess(GetCurrentProcess(), 1);
+//    TerminateProcess(GetCurrentProcess(), 1);
 
     return (EXCEPTION_CONTINUE_SEARCH);
 }
