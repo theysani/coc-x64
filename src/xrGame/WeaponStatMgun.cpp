@@ -228,6 +228,8 @@ void CWeaponStatMgun::UpdateBarrelDir()
 
 void CWeaponStatMgun::cam_Update			(float dt, float fov)
 {
+    camera->f_fov = g_fov;
+
 	Fvector							P,Da;
 	Da.set							(0,0,0);
 
