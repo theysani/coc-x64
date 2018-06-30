@@ -709,6 +709,9 @@ extern Flags32 psEnvFlags;
 extern int g_ErrorLineCount;
 
 ENGINE_API int ps_r__Supersample = 1;
+ENGINE_API float ps_r2_sun_shafts_min = 0.f;
+ENGINE_API float ps_r2_sun_shafts_value = 1.f;
+
 void CCC_Register()
 {
     // General
@@ -758,6 +761,8 @@ void CCC_Register()
     // Render device states
     CMD4(CCC_Integer, "r__supersample", &ps_r__Supersample, 1, 4);
 
+    CMD4(CCC_Float, "r2_sun_shafts_min", &ps_r2_sun_shafts_min, 0.0, 0.5);
+    CMD4(CCC_Float, "r2_sun_shafts_value", &ps_r2_sun_shafts_value, 0.5, 2.0);
 
     CMD3(CCC_Mask, "rs_v_sync", &psDeviceFlags, rsVSync);
     // CMD3(CCC_Mask, "rs_disable_objects_as_crows",&psDeviceFlags, rsDisableObjectsAsCrows );
