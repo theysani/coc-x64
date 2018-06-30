@@ -169,6 +169,7 @@ Flags32		ps_r2_ls_flags_ext			= {
 BOOL		ps_clear_models_on_unload	= 0; //Alundaio
 BOOL		ps_use_precompiled_shaders = 0; //Alundaio
 BOOL 		ps_grass_shadow = 0; 			//Alundaio
+BOOL		ps_no_scale_on_fade = 0; //Alundaio
 float		ps_r2_df_parallax_h			= 0.02f;
 float		ps_r2_df_parallax_range		= 75.f;
 float		ps_r2_tonemap_middlegray	= 1.f;			// r2-only
@@ -248,6 +249,7 @@ u32			dm_current_cache_size = 2401;	//dm_current_cache_line*dm_current_cache_lin
 float		dm_current_fade = 47.5;	//float(2*dm_current_size)-.5f;
 #endif
 float		ps_current_detail_density = 0.6;
+float		ps_current_detail_scale = 1.0f;
 xr_token							ext_quality_token[] = {
     {"qt_off", 0},
     {"qt_low", 1},
@@ -747,6 +749,7 @@ void		xrRender_initconsole	()
 
 //.	CMD4(CCC_Float,		"r__detail_density",	&ps_r__Detail_density,		.05f,	0.99f	);
     CMD4(CCC_Float, "r__detail_density", &ps_current_detail_density/*&ps_r__Detail_density*/, 0.04f/*.2f*/, 0.6f); //AVO: extended from 0.2 to 0.04 and replaced variable
+    CMD4(CCC_Float, "r__detail_scale", &ps_current_detail_scale, 0.5f, 2.0f);
 
 #ifdef DEBUG
 	CMD4(CCC_Float,		"r__detail_l_ambient",	&ps_r__Detail_l_ambient,	.5f,	.95f	);
@@ -937,6 +940,7 @@ void		xrRender_initconsole	()
 	CMD4(CCC_Integer, "r__clear_models_on_unload", &ps_clear_models_on_unload, 0, 1); //Alundaio
 	CMD4(CCC_Integer, "r__use_precompiled_shaders", &ps_use_precompiled_shaders, 0, 1); //Alundaio
     CMD4(CCC_Integer, "r__enable_grass_shadow", &ps_grass_shadow, 0, 1); //Alundaio
+    CMD4(CCC_Integer, "r__no_scale_on_fade", &ps_no_scale_on_fade, 0, 1); //Alundaio
 #endif
 
 	//	Allow real-time fog config reload
