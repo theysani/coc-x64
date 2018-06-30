@@ -50,7 +50,9 @@ class CPhysicObject :
 	public CPhysicsShellHolder,
 	public CPHSkeleton
 {
+protected:
 	typedef CPhysicsShellHolder inherited;
+private:
 	EPOType					m_type					;
 	float					m_mass					;
 	ICollisionHitCallback	*m_collision_hit_callback;
