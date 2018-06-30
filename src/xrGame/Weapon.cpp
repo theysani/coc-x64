@@ -1800,7 +1800,7 @@ float CWeapon::Weight() const
         float w = pSettings->r_float(m_ammoTypes[m_ammoType].c_str(), "inv_weight");
         float bs = pSettings->r_float(m_ammoTypes[m_ammoType].c_str(), "box_size");
 
-        res += w*(iAmmoElapsed / bs);
+        if (bs > 0) res += w*(iAmmoElapsed / bs);
     }
     return res;
 }
