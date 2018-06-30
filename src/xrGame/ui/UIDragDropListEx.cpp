@@ -147,7 +147,7 @@ void CUIDragDropListEx::DestroyDragItem()
 
 Fvector2 CUIDragDropListEx::GetDragItemPosition()
 {
-	return m_drag_item->GetPosition();
+    return GetUICursor().GetCursorPosition(); //return m_drag_item->GetPosition();
 }
 
 
